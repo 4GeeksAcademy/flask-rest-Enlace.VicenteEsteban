@@ -162,7 +162,8 @@ def delete_favorite_people(people_id):
 
 @app.route('/favorites/planets/<int:planet_id>', methods=['DELETE'])
 def delete_favorite_planet(planet_id):
-    favorite_planet=Favorites_planet.query.filter_by(planet_id=planet_id).first()
+    favorite_planet=Favorites_planet.query.filter_by(planet_id=planet_id).first() 
+    #  people_favorites= Favorites_people(user_id=request_body["user_id"],people_id=people_id)
     if favorite_planet is None:
         return jsonify({"info":"Not found"}), 404
 
